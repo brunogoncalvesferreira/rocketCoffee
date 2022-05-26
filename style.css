@@ -1,0 +1,286 @@
+/* reset total da página */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* cores da página */
+:root {
+  --backgrond: #000;
+  --text-color: #fff;
+  --button: #8257e5;
+  --border: #29292e;
+  --border-menu-mobile: #a8a8b3;
+  --text-color-menu-mobile: #e1e1e6;
+}
+
+/* Deixando a rolagem da página suave */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Tirando a borda da tag a é tirando da lista as bolinhas **/
+li,
+a {
+  text-decoration: none;
+  list-style: none;
+}
+
+/* criando um efeito na cor da página */
+body {
+  background-image: linear-gradient(
+      to bottom,
+      rgba(8, 8, 8, 0.5),
+      rgba(46, 10, 96, 0.5)
+    ),
+    url(./assets/Mobile.png);
+}
+
+/* uma margem no header mobile */
+.content {
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+}
+
+#header {
+  border-bottom: 1px solid #29292e;
+
+  padding-bottom: 2.5rem;
+}
+
+#header img {
+  cursor: pointer;
+}
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-top: 2.5rem;
+}
+
+/* Criando menu mobile */
+body.active {
+  overflow: hidden; /* tirando a barra d erolagem no menu mobile */
+}
+.menu-mobile,
+.botao-fechar {
+  position: fixed; /* deixando o menu-mobile e o botao fechar fixado */
+}
+
+.menu-mobile,
+.botao-fechar,
+body.active .botao-abrir,
+body.active #main {
+  opacity: 0; /* quando o body estiver com a class active deixa os elementos invisiveis */
+  visibility: hidden;
+}
+
+body.active .menu-mobile,
+body.active .botao-fechar {
+  opacity: 1; /* quando o body active estiver ativado ele deixa visivel os elementos necessários */
+  visibility: visible;
+}
+
+body.active #header {
+  border: none; /* tirei a borda de baixo do header no menu mobile */
+}
+
+.botao-fechar {
+  right: 2.5rem; /* botao fechar posiciono no local correto */
+  top: 3rem;
+}
+
+body.active .menu-mobile {
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  gap: 2rem;
+  /* posicionamos o menu-mobile os links na posição correto */
+  margin-top: 6rem;
+  margin-left: 1.875rem;
+
+  width: 100vw;
+  height: 100vh;
+
+  top: 0;
+}
+
+.menu-mobile a {
+  font-size: 1.125rem;
+  font-family: 'manrope';
+  font-weight: 400;
+
+  color: var(--border-menu-mobile);
+
+  transition: 0.1s;
+}
+
+.menu-mobile a:hover {
+  color: var(--text-color-menu-mobile);
+  font-weight: 700;
+
+  border-left: 4px solid #8257e5;
+  border-radius: 4px;
+
+  padding-left: 0.4rem;
+}
+
+/* Titulo primeiro da página */
+
+.titulo h1 {
+  font-size: 2rem;
+  font-family: 'manrope';
+  font-weight: 700;
+  width: 23rem;
+  height: 8rem;
+  text-align: center;
+  color: var(--text-color);
+
+  margin: 6rem auto 0 auto;
+
+  line-height: 3rem;
+}
+
+/* botao */
+.botao {
+  width: 10.875rem;
+  height: 2.1875rem;
+
+  background: var(--backgrond);
+
+  border: 1px solid #8257e5;
+  border-radius: 6px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.625rem;
+
+  margin: 6.25rem auto 0 auto;
+}
+
+.botao p {
+  font-size: 0.6rem;
+  font-family: 'manrope';
+  font-weight: 800;
+
+  color: #fff;
+
+  text-transform: uppercase;
+}
+
+/* Titulo segundo da página */
+
+.titulo-segundo img {
+  width: 21.625rem;
+  height: 8.06rem;
+
+  display: flex;
+  margin: 6.125rem auto 0 auto;
+}
+
+/* seção copos de café*/
+.image-copos-cafe img {
+  width: 26.75rem;
+  height: 20rem;
+
+  display: flex;
+
+  margin: 1.8rem auto 0 auto;
+}
+
+/* responsividade 1024px */
+
+@media (min-width: 1024px) {
+  nav#navegacao .wrapper * {
+    opacity: initial;
+    visibility: initial;
+    position: initial;
+    margin: 0;
+    padding: 0;
+    display: initial;
+    border: initial;
+    border-radius: initial;
+  }
+
+  .wrapper {
+    margin-left: 10.625rem;
+    margin-right: 10.625rem;
+  }
+
+  main#main * {
+    margin: 0;
+  }
+
+  nav#navegacao .botao-abrir,
+  nav#navegacao .botao-fechar {
+    display: none;
+  }
+
+  nav#navegacao .menu-mobile a {
+    font-weight: 600;
+    font-size: 1rem;
+  }
+
+  nav#navegacao .menu-mobile a:hover {
+    border-bottom: 4px solid #8257e5;
+    padding-bottom: 1rem;
+  }
+
+  nav#navegacao .menu-mobile {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+  }
+
+  nav#navegacao .botao {
+    width: 10.875rem;
+    height: 2.1875rem;
+
+    background: var(--backgrond);
+
+    border: 1px solid #8257e5;
+    border-radius: 6px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.625rem;
+  }
+
+  header#header {
+    border: none;
+  }
+
+  main#main .titulo {
+    display: none;
+  }
+
+  main#main .botao {
+    display: none;
+  }
+
+  main#main .titulo-segundo img {
+    display: flex;
+    margin: 2.5rem auto 0 auto;
+
+    width: 34.25rem;
+    height: 12.75rem;
+  }
+
+  main#main .image-copos-cafe img {
+    display: flex;
+    margin: 0 auto;
+
+    width: 50rem;
+    height: 31rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  nav#navegacao .botao {
+    display: none;
+  }
+}
