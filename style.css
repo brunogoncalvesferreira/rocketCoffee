@@ -44,8 +44,8 @@ body {
 }
 
 #header {
+  width: 100%;
   border-bottom: 1px solid #29292e;
-
   padding-bottom: 2.5rem;
 }
 
@@ -133,14 +133,11 @@ body.active .menu-mobile {
   font-size: 2rem;
   font-family: 'manrope';
   font-weight: 700;
-  width: 23rem;
-  height: 8rem;
+  width: 20rem;
   text-align: center;
   color: var(--text-color);
 
   margin: 6rem auto 0 auto;
-
-  line-height: 3rem;
 }
 
 /* botao */
@@ -174,8 +171,7 @@ body.active .menu-mobile {
 /* Titulo segundo da página */
 
 .titulo-segundo img {
-  width: 21.625rem;
-  height: 8.06rem;
+  width: 20rem;
 
   display: flex;
   margin: 6.125rem auto 0 auto;
@@ -183,8 +179,7 @@ body.active .menu-mobile {
 
 /* seção copos de café*/
 .image-copos-cafe img {
-  width: 26.75rem;
-  height: 20rem;
+  width: 20rem;
 
   display: flex;
 
